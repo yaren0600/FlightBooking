@@ -1,0 +1,332 @@
+﻿<style>
+    /* --- Fly Next Area Custom CSS --- */
+    .fly-next-area {
+        padding: 100px 0;
+        background-color: #f9faff;
+    }
+
+    .fly-next-item {
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border-radius: 20px;
+        background: #ffffff;
+        border: 1px solid #ebebeb;
+        padding: 0;
+        overflow: hidden;
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+        /* Kart Üzerine Gelince (Hover) */
+        .fly-next-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(59, 67, 225, 0.12) !important;
+            border-color: #3b43e1;
+        }
+
+    .fly-next-thumb img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .fly-next-content {
+        padding: 25px;
+        position: relative;
+    }
+
+    /* Tarih Etiketi */
+    .date-badge {
+        display: inline-block;
+        background: rgba(59, 67, 225, 0.08);
+        color: #3b43e1;
+        padding: 4px 14px;
+        border-radius: 50px;
+        font-size: 11px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .fly-next-content .title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #1c2331;
+    }
+
+    /* Değişim İkonu */
+    .exchange-btn {
+        display: inline-block;
+        margin: 10px 0;
+        color: #3b43e1;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    .fly-next-item:hover .exchange-btn {
+        transform: rotate(180deg);
+    }
+
+    /* Havayolu Logosu Alanı */
+    .air-logo-wrap {
+        margin: 20px 0;
+        padding-top: 15px;
+        border-top: 1px dashed #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        .air-logo-wrap img {
+            max-height: 25px;
+            border-radius: 4px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+    .fly-next-item:hover .air-logo-wrap img {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    /* Alt Kısım ve Fiyat */
+    .content-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+        .content-bottom p {
+            margin-bottom: 0;
+            font-size: 13px;
+            color: #777;
+            font-weight: 500;
+        }
+
+        .content-bottom .price {
+            color: #ff5e14;
+            font-weight: 800;
+            font-size: 24px;
+            margin: 0;
+        }
+
+    /* Navigasyon Butonları */
+    .fly-next-nav {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+        .fly-next-nav button {
+            border: none;
+            background: none;
+            padding: 10px 25px;
+            font-weight: 700;
+            font-size: 15px;
+            color: #666;
+            transition: 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+            .fly-next-nav button.active, .fly-next-nav button:hover {
+                color: #3b43e1;
+                border-bottom: 2px solid #3b43e1;
+            }
+</style>
+
+<section class="fly-next-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center mb-50">
+                    <span class="sub-title" style="color: #3b43e1; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px;">Geair Global Rotalar</span>
+                    <h2 class="title" style="font-size: 36px; font-weight: 800;">Dünyanın Dört Bir Yanına Uçun</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="fly-next-nav">
+                    <button class="active" data-filter="*">Tüm Teklifler <i class="flaticon-flight"></i></button>
+                    <button class="" data-filter=".cat-one">Popüler Şehirler</button>
+                    <button class="" data-filter=".cat-two">Fırsat Paketleri</button>
+                    <button class="" data-filter=".cat-three">Business Class</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row fly-next-active">
+
+            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-one">
+                <div class="fly-next-item">
+                    <div class="fly-next-thumb">
+                        <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img01.jpg" alt="Dubai"></a>
+                    </div>
+                    <div class="fly-next-content">
+                        <span class="date-badge">15 Haz - 22 Haz 2026</span>
+                        <h4 class="title">Dubai (DXB), BAE</h4>
+                        <a href="#" class="exchange-btn"><i class="flaticon-exchange-1"></i></a>
+                        <h4 class="title">İstanbul (IST), TR</h4>
+                        <div class="air-logo-wrap">
+                            <img src="/geair/assets/img/icon/fly_icon01.jpg" alt="Fly Emirate">
+                        </div>
+                        <div class="content-bottom">
+                            <p>Ekonomi Sınıfı</p>
+                            <h4 class="price">₺7.250</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-three">
+                <div class="fly-next-item">
+                    <div class="fly-next-thumb">
+                        <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img02.jpg" alt="Londra"></a>
+                    </div>
+                    <div class="fly-next-content">
+                        <span class="date-badge">18 Haz - 25 Haz 2026</span>
+                        <h4 class="title">Londra (LHR), İngiltere</h4>
+                        <a href="#" class="exchange-btn"><i class="flaticon-exchange-1"></i></a>
+                        <h4 class="title">Ankara (ESB), TR</h4>
+                        <div class="air-logo-wrap">
+                            <img src="/geair/assets/img/icon/fly_icon02.jpg" alt="British Airways">
+                        </div>
+                        <div class="content-bottom">
+                            <p>Business Class</p>
+                            <h4 class="price">₺32.400</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-one">
+                <div class="fly-next-item">
+                    <div class="fly-next-thumb">
+                        <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img03.jpg" alt="Paris"></a>
+                    </div>
+                    <div class="fly-next-content">
+                        <span class="date-badge">01 Tem - 10 Tem 2026</span>
+                        <h4 class="title">Paris (CDG), Fransa</h4>
+                        <a href="#" class="exchange-btn"><i class="flaticon-exchange-1"></i></a>
+                        <h4 class="title">İstanbul (IST), TR</h4>
+                        <div class="air-logo-wrap">
+                            <img src="/geair/assets/img/icon/fly_icon03.jpg" alt="Air France">
+                        </div>
+                        <div class="content-bottom">
+                            <p>Ekonomi Sınıfı</p>
+                            <h4 class="price">₺11.800</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-three">
+                <div class="fly-next-item">
+                    <div class="fly-next-thumb">
+                        <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img04.jpg" alt="Tokyo"></a>
+                    </div>
+                    <div class="fly-next-content">
+                        <span class="date-badge">12 Ağu - 25 Ağu 2026</span>
+                        <h4 class="title">Tokyo (HND), Japonya</h4>
+                        <a href="#" class="exchange-btn"><i class="flaticon-exchange-1"></i></a>
+                        <h4 class="title">İzmir (ADB), TR</h4>
+                        <div class="air-logo-wrap">
+                            <img src="/geair/assets/img/icon/fly_icon01.jpg" alt="JAL">
+                        </div>
+                        <div class="content-bottom">
+                            <p>First Class</p>
+                            <h4 class="price">₺58.900</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-two">
+                <div class="fly-next-item">
+                    <div class="fly-next-thumb">
+                        <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img05.jpg" alt="New York"></a>
+                    </div>
+                    <div class="fly-next-content">
+                        <span class="date-badge">05 Eyl - 15 Eyl 2026</span>
+                        <h4 class="title">New York (JFK), ABD</h4>
+                        <a href="#" class="exchange-btn"><i class="flaticon-exchange-1"></i></a>
+                        <h4 class="title">İstanbul (IST), TR</h4>
+                        <div class="air-logo-wrap">
+                            <img src="/geair/assets/img/icon/fly_icon02.jpg" alt="Delta">
+                        </div>
+                        <div class="content-bottom">
+                            <p>Ekonomi Sınıfı</p>
+                            <h4 class="price">₺21.500</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-one">
+                <div class="fly-next-item">
+                    <div class="fly-next-thumb">
+                        <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img06.jpg" alt="Roma"></a>
+                    </div>
+                    <div class="fly-next-content">
+                        <span class="date-badge">10 Eki - 17 Eki 2026</span>
+                        <h4 class="title">Roma (FCO), İtalya</h4>
+                        <a href="#" class="exchange-btn"><i class="flaticon-exchange-1"></i></a>
+                        <h4 class="title">Antalya (AYT), TR</h4>
+                        <div class="air-logo-wrap">
+                            <img src="/geair/assets/img/icon/fly_icon03.jpg" alt="Alitalia">
+                        </div>
+                        <div class="content-bottom">
+                            <p>Ekonomi Sınıfı</p>
+                            <h4 class="price">₺8.900</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-two">
+                <div class="fly-next-item">
+                    <div class="fly-next-thumb">
+                        <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img07.jpg" alt="Berlin"></a>
+                    </div>
+                    <div class="fly-next-content">
+                        <span class="date-badge">02 Kas - 09 Kas 2026</span>
+                        <h4 class="title">Berlin (BER), Almanya</h4>
+                        <a href="#" class="exchange-btn"><i class="flaticon-exchange-1"></i></a>
+                        <h4 class="title">İstanbul (IST), TR</h4>
+                        <div class="air-logo-wrap">
+                            <img src="/geair/assets/img/icon/fly_icon01.jpg" alt="Lufthansa">
+                        </div>
+                        <div class="content-bottom">
+                            <p>Ekonomi Sınıfı</p>
+                            <h4 class="price">₺6.150</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-three">
+                <div class="fly-next-item">
+                    <div class="fly-next-thumb">
+                        <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img08.jpg" alt="Seul"></a>
+                    </div>
+                    <div class="fly-next-content">
+                        <span class="date-badge">15 Ara - 30 Ara 2026</span>
+                        <h4 class="title">Seul (ICN), Güney Kore</h4>
+                        <a href="#" class="exchange-btn"><i class="flaticon-exchange-1"></i></a>
+                        <h4 class="title">İstanbul (IST), TR</h4>
+                        <div class="air-logo-wrap">
+                            <img src="/geair/assets/img/icon/fly_icon02.jpg" alt="Korean Air">
+                        </div>
+                        <div class="content-bottom">
+                            <p>Business Class</p>
+                            <h4 class="price">₺48.200</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
