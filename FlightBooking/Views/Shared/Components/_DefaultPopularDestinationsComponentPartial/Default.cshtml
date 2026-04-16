@@ -1,40 +1,115 @@
 ﻿<style>
-    /* --- Fly Next Area Custom CSS --- */
+    /* --- GENEL ALAN AYARLARI --- */
     .fly-next-area {
         padding: 100px 0;
-        background-color: #f9faff;
+        background-color: #f8faff;
+        font-family: 'Poppins', sans-serif; /* Projenin fontu farklıysa ona uyum sağlar */
     }
 
+    .section-title .sub-title {
+        color: #3b43e1;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .section-title .title {
+        font-size: 36px;
+        font-weight: 800;
+        color: #1c2331;
+        margin-bottom: 50px;
+    }
+
+    /* --- MODERN NAVİGASYON (BUTONLAR) --- */
+    .fly-next-nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 60px;
+        flex-wrap: wrap;
+    }
+
+        .fly-next-nav button {
+            background: #ffffff;
+            border: 1px solid #e0e4f0;
+            color: #4a5568;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+
+            /* Görseldeki o garip yuvarlakları temizlemek için reset */
+            .fly-next-nav button::before,
+            .fly-next-nav button::after {
+                display: none !important;
+                content: none !important;
+            }
+
+            .fly-next-nav button:hover {
+                background: #f0f3ff;
+                color: #3b43e1;
+                border-color: #3b43e1;
+                transform: translateY(-3px);
+            }
+
+            .fly-next-nav button.active {
+                background: #3b43e1;
+                color: #ffffff;
+                border-color: #3b43e1;
+                box-shadow: 0 8px 20px rgba(59, 67, 225, 0.2);
+            }
+
+            .fly-next-nav button i {
+                font-size: 18px;
+            }
+
+    /* --- KART TASARIMI --- */
     .fly-next-item {
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         border-radius: 20px;
         background: #ffffff;
-        border: 1px solid #ebebeb;
-        padding: 0;
+        border: 1px solid #eee;
         overflow: hidden;
         margin-bottom: 30px;
-        position: relative;
+        height: 100%;
     }
 
-        /* Kart Üzerine Gelince (Hover) */
         .fly-next-item:hover {
             transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(59, 67, 225, 0.12) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
             border-color: #3b43e1;
         }
 
-    .fly-next-thumb img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
+    .fly-next-thumb {
+        position: relative;
+        overflow: hidden;
+    }
+
+        .fly-next-thumb img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+    .fly-next-item:hover .fly-next-thumb img {
+        transform: scale(1.1);
     }
 
     .fly-next-content {
         padding: 25px;
-        position: relative;
     }
 
-    /* Tarih Etiketi */
+    /* Tarih Badge */
     .date-badge {
         display: inline-block;
         background: rgba(59, 67, 225, 0.08);
@@ -44,44 +119,38 @@
         font-size: 11px;
         font-weight: 700;
         margin-bottom: 15px;
-        letter-spacing: 0.5px;
     }
 
     .fly-next-content .title {
         font-size: 18px;
         font-weight: 700;
-        margin-bottom: 5px;
+        margin-bottom: 0;
         color: #1c2331;
     }
 
-    /* Değişim İkonu */
     .exchange-btn {
         display: inline-block;
-        margin: 10px 0;
+        margin: 8px 0;
         color: #3b43e1;
         font-size: 18px;
-        transition: 0.3s;
+        transition: 0.4s;
     }
 
     .fly-next-item:hover .exchange-btn {
         transform: rotate(180deg);
     }
 
-    /* Havayolu Logosu Alanı */
+    /* Havayolu Logosu */
     .air-logo-wrap {
-        margin: 20px 0;
+        margin: 15px 0;
         padding-top: 15px;
-        border-top: 1px dashed #e0e0e0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        border-top: 1px dashed #e5e5e5;
     }
 
         .air-logo-wrap img {
-            max-height: 25px;
-            border-radius: 4px;
+            max-height: 24px;
             filter: grayscale(100%);
-            opacity: 0.6;
+            opacity: 0.5;
             transition: 0.3s;
         }
 
@@ -90,7 +159,7 @@
         opacity: 1;
     }
 
-    /* Alt Kısım ve Fiyat */
+    /* Fiyat ve Alt Kısım */
     .content-bottom {
         display: flex;
         align-items: center;
@@ -101,8 +170,7 @@
         .content-bottom p {
             margin-bottom: 0;
             font-size: 13px;
-            color: #777;
-            font-weight: 500;
+            color: #707070;
         }
 
         .content-bottom .price {
@@ -111,55 +179,33 @@
             font-size: 24px;
             margin: 0;
         }
-
-    /* Navigasyon Butonları */
-    .fly-next-nav {
-        margin-bottom: 50px;
-        text-align: center;
-    }
-
-        .fly-next-nav button {
-            border: none;
-            background: none;
-            padding: 10px 25px;
-            font-weight: 700;
-            font-size: 15px;
-            color: #666;
-            transition: 0.3s;
-            border-bottom: 2px solid transparent;
-        }
-
-            .fly-next-nav button.active, .fly-next-nav button:hover {
-                color: #3b43e1;
-                border-bottom: 2px solid #3b43e1;
-            }
 </style>
 
 <section class="fly-next-area">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="section-title text-center mb-50">
-                    <span class="sub-title" style="color: #3b43e1; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px;">Geair Global Rotalar</span>
-                    <h2 class="title" style="font-size: 36px; font-weight: 800;">Dünyanın Dört Bir Yanına Uçun</h2>
+                <div class="section-title text-center">
+                    <span class="sub-title">Geair Ayrıcalıklı Paketler</span>
+                    <h2 class="title">Dünyayı Bizimle Keşfedin</h2>
                 </div>
             </div>
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <div class="fly-next-nav">
-                    <button class="active" data-filter="*">Tüm Teklifler <i class="flaticon-flight"></i></button>
-                    <button class="" data-filter=".cat-one">Popüler Şehirler</button>
-                    <button class="" data-filter=".cat-two">Fırsat Paketleri</button>
-                    <button class="" data-filter=".cat-three">Business Class</button>
+                    <button class="active" data-filter="*"><i class="flaticon-flight"></i> Tüm Teklifler</button>
+                    <button class="" data-filter=".cat-one"><i class="flaticon-departure"></i> Popüler Şehirler</button>
+                    <button class="" data-filter=".cat-two"><i class="flaticon-tag"></i> Fırsat Paketleri</button>
+                    <button class="" data-filter=".cat-three"><i class="flaticon-star"></i> Business Class</button>
                 </div>
             </div>
         </div>
 
-        <div class="row fly-next-active">
+        <div class="row fly-next-active justify-content-center">
 
-            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-one">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 grid-item cat-one">
                 <div class="fly-next-item">
                     <div class="fly-next-thumb">
                         <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img01.jpg" alt="Dubai"></a>
@@ -180,7 +226,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-three">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 grid-item cat-three">
                 <div class="fly-next-item">
                     <div class="fly-next-thumb">
                         <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img02.jpg" alt="Londra"></a>
@@ -201,7 +247,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-one">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 grid-item cat-one">
                 <div class="fly-next-item">
                     <div class="fly-next-thumb">
                         <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img03.jpg" alt="Paris"></a>
@@ -222,7 +268,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-three">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 grid-item cat-three">
                 <div class="fly-next-item">
                     <div class="fly-next-thumb">
                         <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img04.jpg" alt="Tokyo"></a>
@@ -233,7 +279,7 @@
                         <a href="#" class="exchange-btn"><i class="flaticon-exchange-1"></i></a>
                         <h4 class="title">İzmir (ADB), TR</h4>
                         <div class="air-logo-wrap">
-                            <img src="/geair/assets/img/icon/fly_icon01.jpg" alt="JAL">
+                            <img src="/geair/assets/img/icon/fly_icon01.jpg" alt="JAL Airways">
                         </div>
                         <div class="content-bottom">
                             <p>First Class</p>
@@ -243,7 +289,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-two">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 grid-item cat-two">
                 <div class="fly-next-item">
                     <div class="fly-next-thumb">
                         <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img05.jpg" alt="New York"></a>
@@ -264,7 +310,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-one">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 grid-item cat-one">
                 <div class="fly-next-item">
                     <div class="fly-next-thumb">
                         <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img06.jpg" alt="Roma"></a>
@@ -285,7 +331,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-two">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 grid-item cat-two">
                 <div class="fly-next-item">
                     <div class="fly-next-thumb">
                         <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img07.jpg" alt="Berlin"></a>
@@ -306,7 +352,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-4 col-md-6 grid-item cat-three">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 grid-item cat-three">
                 <div class="fly-next-item">
                     <div class="fly-next-thumb">
                         <a href="booking-details.html"><img src="/geair/assets/img/images/fly_img08.jpg" alt="Seul"></a>
